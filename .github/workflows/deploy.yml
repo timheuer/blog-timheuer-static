@@ -37,7 +37,7 @@ jobs:
               run: |
                   mkdir -p _site/blog
                   cp -r dist/* _site/blog/
-                  cp public/index.html _site/index.html
+                  echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/blog/"></head><body><a href="/blog/">Redirecting...</a></body></html>' > _site/index.html
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v5
