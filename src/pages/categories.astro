@@ -1,0 +1,43 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AboutBox from '../components/AboutBox.astro';
+
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+
+// Build category map: lowercase category -> { displayName, count }
+const categoryMap = new Map<string, { displayName: string; count: number }>();
+for (const post of allPosts) {
+  for (const cat of post.data.categories) {
+    const key = cat.toLowerCase();
+    const existing = categoryMap.get(key);
+    if (existing) {
+      existing.count++;
+    } else {
+      categoryMap.set(key, { displayName: cat, count: 1 });
+    }
+  }
+}
+
+const categories = Array.from(categoryMap.entries())
+  .sort((a, b) => a[1].displayName.localeCompare(b[1].displayName));
+
+const yearsOfBlogging = new Date().getFullYear() - 2003;
+---
+
+<BaseLayout title="Categories - Tim Heuer" description="Browse posts by category">
+  <article class="post container" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <header>
+      <h1 itemprop="name headline">Browse posts by category...</h1>
+      <div class="alert alert-warning" role="alert">
+        Yeah, there is a lot of categories here generated from {yearsOfBlogging} years of 'tags' -- until I clean them up they might not be helpful.
+      </div>
+      <ul class="categories categorylist">
+        {categories.map(([key, { displayName }]) => (
+          <li itemprop="articleSection"><a href={`/blog/category/${key}/`}>{displayName}</a></li>
+        ))}
+      </ul>
+    </header>
+    <AboutBox />
+  </article>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+title: "Why won&rsquo;t iTunes behave?"
+slug: "apple-itunes-podcast-settings-not-honored"
+pubDate: 2009-01-07T13:53:55.000Z
+lastModified: 2019-10-23T04:20:26.000Z
+categories:
+  - "itunes"
+  - "podcast"
+  - "apple"
+  - "iphone"
+  - "ipod"
+draft: false
+---
+
+<p>In a recent <a href="http://twitter.com/timheuer">Twitter</a> <a href="http://twitter.com/jrzyshr/status/1102644743">conversation I was having with Peter Laudati</a>, it reminded me of another problem I’ve been having with iTunes and wondering why it isn’t working this way.  </p>  <p>First, here’s my setup (and logic):</p>  <ul>   <ul>     <li>I have one server (Windows Server 2008) at my house that manages my backup, music, photos, etc. (no it is <strong>not</strong> a Windows Home Server (yet)).</li>      <li>I have a public share there with Everyone read/write priveleges called “music” and it is shared out an accessible.</li>      <li>In each client computer I have iTunes installed at, I change the Library location to the mapped drive which is pointing to the share indicated above.</li>      <li>All is well.</li>      <li>Whenever new music is added in a CLIENT machine, it is added to the server (because the library is pointing there) and added to <strong>only that local client’s iTunes library</strong> – this is the problem Peter and I were discussing, the fact that iTunes doesn’t “monitor” folders to update it’s Library – you have to help it understand by adding.  Royal suck. (FYI, Windows Media Player has been able to monitor folders for about 9 years now.)</li>   </ul> </ul>  <p>So that’s the setup.  Any activity in iTunes now basically uses this server as the storage…this includes podcast subscriptions.  This is all fine.  Until I want iTunes to actually honor my settings.  Here’s what I’m talking about:</p>  <p><img src="http://storage.timheuer.com/itunesmisbehave.png" /></p>  <p>As you can see in this image above, my settings say to keep “all unplayed episodes” but also as you can see, episodes that are played (as indicated by the lack of blue dot) are still there.  I’ve refreshed, I’ve ran the “updated podcast” function on the feed(s), etc.  Nothing…all played episodes are persisted.</p>  <p>So, dear Apple fans/experts/geniuses, why is this?  Is this because my Library is a network share?  Can iTunes not handle the fact that it isn’t stored locally?  I will point out that if I manually delete them via iTunes, it does, in fact, delete – so it isn’t a permission thing.  I’d love to take this to the ‘Genius Bar’ but obviously with a dependency on my network share it won’t be of much help.</p>  <p>If anyone knows the solution to this or the problem with getting iTunes to manually update libraries by monitoring folders, I’m all ears.</p>  <p>Yes, I’m aware that Songbird, and others are out there, but they have yet to appeal to me in their other features.</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:dec72622-8a2e-4ed6-9f9d-4eea0b33811a" class="wlWriterEditableSmartContent"></div>

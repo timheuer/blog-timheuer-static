@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RecentPosts from '../components/RecentPosts.astro';
+---
+
+<BaseLayout title="🙀 Oh no!? Something is missing!" description="The content requested was not found on this site.">
+  <article class="post container" itemscope itemtype="http://schema.org/BlogPosting" style="margin-top:50px" itemprop="blogPost">
+    <header>
+      <h1 itemprop="name headline">🙀 Oh no!? Something is missing!</h1>
+    </header>
+
+    <div itemprop="articleBody mainEntityOfPage">
+      <p>
+        It looks like the link you entered or clicked isn't valid. I can't seem to find anything on the site for that address.
+        Have no fear, there is still some other things you can read here. Just head back to <a href="/blog/">the home page</a> to start reading the most recent articles.
+        Otherwise you can <a href="/blog/contact">contact me</a> if you need to find something specific.
+      </p>
+      <p>
+        I'm sorry that you couldn't find what you're looking for but hopefully you'll find something else valuable! Here are the latest to check out:
+        <br />
+        <RecentPosts count={6} />
+      </p>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+title: "two worst pieces of technology in years"
+slug: "airport-express-and-lacie-hard-drive-suck-big-time"
+pubDate: 2007-10-04T09:48:22.000Z
+lastModified: 2019-10-23T04:20:10.000Z
+categories:
+  - "apple"
+  - "timheuer"
+  - "airport"
+  - "airport extreme"
+  - "lacie"
+  - "bonjour"
+  - "linksys"
+draft: false
+---
+
+<p>i recently <a href="http://timheuer.com/blog/archive/2007/09/20/tech-toys-for-guys-birthday.aspx">wrote about my birthday binge purchases</a>, one of which included an <a href="http://www.apple.com/airportextreme/">airport extreme</a>.  in addition to the airport, i acquired a matching (in size so it fit right under it) <a href="http://www.lacie.com/us/products/product.htm?pid=10727">lacie mini hard drive</a>.  the reason for this (and the initial airport purchase) was i'm trying to consolidate some storage without having to have a running "machine" (OS) anywhere.  the airport touted the ability to plugin an external hard drive and share it with everyone.</p>
+<p>well, i'm happy to report that my other birthday purchases are doing me proud.  the airport and lacie, on the other hand, are quite possibly two of the worst pieces of technology that i personally have ever purchased.  i know "your mileage may vary" and i'm not trying to blanket everyone, but for me, it is a complete failure.  which is disappointing because i read the reviews on both products and selected based on particular comments etc.  allow me to vent.</p>
+<p><strong><u>airport extreme</u></strong>:</p>
+<p>while beautiful in industrial design, it lacks features i'm used to (and desire).  i should have known not to mess with my ol' trusty linksys solution, but i was lured with the shared drive and 802.11n spec inclusion.  alas, piece of poo.  the sharing of the drive?  yes, but only if it is a mac-formatted one.  i plugged in my existing western digital 320GB drive (which has my files on it) first, and the error log simply stated that it was unable to mount the drive and i must plug it into a computer and "repair" it -- and repair==re-format.  no thanks.  (this is why i bought the lacie which is a bigger capacity as well.)  also, the sharing itself for "mac or pc" is really for mac.  it doesn't use any standard other than its own...bonjour.  so on a windows machine i couldn't map to \\box\share but had to install bonjour for windows and use it that way.  argh.  why wouldn't they just use samba or something?</p>
+<p>wireless options...this is probably the thing that bothered me.  first, where is the web-based admin?  nowhere.  i had to install a client on both my mac and win machines to configure it.  while the software is nice looking, it is fischer price features.  seriously, give me the advanced option and allow me to configure from anywhere within the network.  i don't use wep/wpa in my home wireless, but use mac hardware address filtering.  setting up this feature on the airport was not intuitive.  the logging/diagnostics (showing me the connected wireless clients) also only showed me the connected mac addresses?! wtf?!  you made me input the mac address and give it a name, couldn't you show me the name in the connected client list?  argh.</p>
+<p>probably the single reason i'm returning it is performance.  yesterday i worked from home.  aside from being a bad idea with a 5 year old, 1 year old, and wife (whom i love so dearly :-)), the interweb was horrible.  my wife even commented something was wrong.  for her to notice something is wrong, means something is wrong.  i "rebooted" the airport a few times (a process that also is not intuitive, you must make a config change to "update" which results in a reboot.  anyhow, my wireless throughput was HORRIBLE (see andrew, i do have caps).  i honestly couldn't believe how slow it was.  as a test i tweaked a few configs but nothing would improve it.  i plugged my linksys back in and all was back to normal/fast.  i still don't know what the problem was, but i could isolate it to the airport.  for that reason alone, i'm ditching it (the other reasons just re-affirm my decision).</p>
+<p><strong><u>lacie hard drive</u></strong>:</p>
+<p>again, great industrial design (for mac accessories) and fit perfectly under the airport and tucked away.  the problem?  turn it on.  unless you like the sound of a hair dryer up against your ear all day, this isn't for you.  seriously, with no data on it, nobody accessing it, just plugging it in and turning it on in a well ventilated, cool room, it hummed like a banshee.  i couldn't take it for more than 5 minutes.  my wife, who shares the same home office, looked at me and simply said "absolutely not."  i knew at that moment it had to go back.  i honestly could not believe how loud the thing was...horrible, horrible, horrible.</p>
+<p>so i'm back to the apple store today to return.  i suspect they'll charge me a restocking fee which i'll gladly pay to be rid of these piles of garbage.</p>
+<p>as always, your mileage may vary.  i consider myself pretty savvy and feel my assessment is accurate for the advanced user, but everyone is entitled to their opinion otherwise.  two big thumbs down on both products...big time.</p>
+<div class="wlWriterSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:680eb0ba-f546-43f7-8aa5-e99bbb757198" style="PADDING-RIGHT: 0px; DISPLAY: inline; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px"></div>

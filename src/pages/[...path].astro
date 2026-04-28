@@ -1,0 +1,68 @@
+---
+/**
+ * Generates redirect pages for legacy URL patterns:
+ * - /post/{slug} -> /blog/{slug}/
+ * - /blog/tags/{category}/default.aspx -> /blog/category/{category}/
+ * - /blog/archive/{year}/{month}/{day}/{slug}.aspx -> /blog/{slug}/
+ */
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+  const paths: any[] = [];
+
+  // /post/{slug} -> /blog/{slug}/
+  for (const post of allPosts) {
+    paths.push({
+      params: { path: `post/${post.data.slug}` },
+      props: { target: `/blog/${post.data.slug}/` },
+    });
+  }
+
+  // /blog/tags/{category}/default.aspx -> /blog/category/{category}/
+  const categorySet = new Set<string>();
+  for (const post of allPosts) {
+    for (const cat of post.data.categories) {
+      categorySet.add(cat.toLowerCase());
+    }
+  }
+  for (const cat of categorySet) {
+    paths.push({
+      params: { path: `blog/tags/${cat}/default.aspx` },
+      props: { target: `/blog/category/${cat}/` },
+    });
+  }
+
+  // /blog/archive/{year}/{month}/{day}/{slug}.aspx -> /blog/{slug}/
+  for (const post of allPosts) {
+    const d = post.data.pubDate;
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    paths.push({
+      params: { path: `blog/archive/${year}/${month}/${day}/${post.data.slug}.aspx` },
+      props: { target: `/blog/${post.data.slug}/` },
+    });
+  }
+
+  return paths;
+}
+
+const { target } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content={`0;url=${target}`} />
+  <link rel="canonical" href={target} />
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting to <a href={target}>{target}</a>...</p>
+  <script is:inline define:vars={{ target }}>
+    window.location.replace(target);
+  </script>
+</body>
+</html>

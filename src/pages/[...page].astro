@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SocialSharing from '../components/SocialSharing.astro';
+
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
+  const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+  const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  return paginate(sorted, { pageSize: 5 });
+}
+
+const { page } = Astro.props;
+const siteUrl = 'https://timheuer.com';
+---
+
+<BaseLayout title="Tim Heuer" description="The web site and blog of Tim Heuer, Program Manager for .NET">
+  {page.data.map((post: any) => (
+    <article class="post container" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+      <header>
+        <h1 itemprop="name headline"><a href={`/blog/${post.data.slug}/`} rel="canonical" itemprop="url">{post.data.title}</a></h1>
+        <time datetime={post.data.pubDate.toISOString()} itemprop="datePublished">
+          {post.data.pubDate.toLocaleDateString('en-US', { day: '2-digit', month: 'long', year: 'numeric' })}
+        </time>
+        {post.data.categories.length > 0 && (
+          <ul class="categories">
+            <li> | Posted in </li>
+            {post.data.categories.map((cat: string) => (
+              <li itemprop="articleSection"><a href={`/blog/category/${cat.toLowerCase()}/`}>{cat}</a></li>
+            ))}
+          </ul>
+        )}
+      </header>
+      <div itemprop="articleBody mainEntityOfPage" set:html={post.body} />
+      <footer>
+        {post.data.categories.length > 0 && (
+          <ul class="categories">
+            <li> | Posted in </li>
+            {post.data.categories.map((cat: string) => (
+              <li itemprop="articleSection"><a href={`/blog/category/${cat.toLowerCase()}/`}>{cat}</a></li>
+            ))}
+          </ul>
+        )}
+        <meta itemprop="author" content="Tim Heuer" />
+        {post.data.lastModified && <meta itemprop="dateModified" content={post.data.lastModified.toISOString()} />}
+        <meta itemprop="mainEntityOfPage" content={`${siteUrl}/blog/${post.data.slug}/`} />
+      </footer>
+    </article>
+  ))}
+
+  <nav class="pagination" aria-label="Pagination">
+    <div class="container">
+      <div class="d-flex">
+        {page.url.next && (
+          <a rel="prev" href={page.url.next} title="Older posts">
+            <i class="fa fa-arrow-circle-left"></i> Older Posts
+          </a>
+        )}
+        {page.url.prev && (
+          <a rel="next" href={page.url.prev} title="Newer posts" class="ml-auto">
+            Newer Posts <i class="fa fa-arrow-alt-circle-right"></i>
+          </a>
+        )}
+      </div>
+    </div>
+  </nav>
+
+  <SocialSharing title="Tim Heuer" url="/blog/" />
+</BaseLayout>

@@ -1,0 +1,109 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RecentPosts from '../components/RecentPosts.astro';
+import AboutBox from '../components/AboutBox.astro';
+import SocialSharing from '../components/SocialSharing.astro';
+import PrevNext from '../components/PrevNext.astro';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+  const sorted = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  return sorted.map((post, index) => {
+    const prev = index < sorted.length - 1 ? sorted[index + 1] : undefined;
+    const next = index > 0 ? sorted[index - 1] : undefined;
+
+    return {
+      params: { slug: post.data.slug },
+      props: {
+        post,
+        prevPost: prev ? { title: prev.data.title, slug: prev.data.slug } : undefined,
+        nextPost: next ? { title: next.data.title, slug: next.data.slug } : undefined,
+      },
+    };
+  });
+}
+
+const { post, prevPost, nextPost } = Astro.props;
+const { Content } = await render(post);
+const siteUrl = 'https://timheuer.com';
+const postUrl = `/blog/${post.data.slug}/`;
+const isOld = post.data.pubDate.getFullYear() < new Date().getFullYear() - 5;
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  ogImage={siteUrl + '/blog/img/twitter-summary-large.png'}
+  canonicalUrl={siteUrl + postUrl}
+>
+  <article class="post container" itemscope itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+    <header>
+      <h1 itemprop="name headline"><a href={postUrl} rel="canonical" itemprop="url">{post.data.title}</a></h1>
+      <time datetime={post.data.pubDate.toISOString()} itemprop="datePublished">
+        {post.data.pubDate.toLocaleDateString('en-US', { day: '2-digit', month: 'long', year: 'numeric' })}
+      </time>
+      {post.data.categories.length > 0 && (
+        <ul class="categories">
+          <li> | Posted in </li>
+          {post.data.categories.map((cat: string) => (
+            <li itemprop="articleSection"><a href={`/blog/category/${cat.toLowerCase()}/`}>{cat}</a></li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    {isOld && (
+      <div class="alert alert-warning" role="alert">
+        Thanks for visiting! Just a fair warning this post is fairly 'old' in tech terms and may contain outdated
+        information and/or broken links or pictures. Please verify info and feel free to <a href="/blog/contact">contact me</a> if questions!
+      </div>
+    )}
+
+    <div itemprop="articleBody mainEntityOfPage">
+      <Content />
+    </div>
+
+    <footer>
+      {post.data.categories.length > 0 && (
+        <ul class="categories">
+          <li> | Posted in </li>
+          {post.data.categories.map((cat: string) => (
+            <li itemprop="articleSection"><a href={`/blog/category/${cat.toLowerCase()}/`}>{cat}</a></li>
+          ))}
+        </ul>
+      )}
+      <meta itemprop="author" content="Tim Heuer" />
+      {post.data.lastModified && <meta itemprop="dateModified" content={post.data.lastModified.toISOString()} />}
+      <meta itemprop="mainEntityOfPage" content={siteUrl + postUrl} />
+    </footer>
+
+    <p>Please enjoy some of these other recent posts...</p>
+    <RecentPosts excludeId={post.data.slug} count={6} />
+
+    <AboutBox />
+  </article>
+
+  <SocialSharing title={post.data.title} url={postUrl} />
+
+  <PrevNext
+    next={nextPost}
+    previous={prevPost}
+  />
+
+  <Fragment slot="scripts">
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('h2').forEach(function(heading) {
+          var headingId = heading.textContent.replace(/\s+/g, '-').toLowerCase();
+          if (headingId !== 'comments') {
+            heading.setAttribute('id', headingId);
+            heading.insertAdjacentHTML('beforeend',
+              '<a class="heading-link" title="Bookmark link for ' + headingId + '" href="#' + headingId + '"><i class="fa fa-link"></i></a>');
+          }
+        });
+      });
+    </script>
+  </Fragment>
+</BaseLayout>

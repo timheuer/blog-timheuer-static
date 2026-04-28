@@ -1,0 +1,64 @@
+---
+title: "Seeding your Metro style app with a SQLite database"
+slug: "seeding-your-metro-style-app-with-sqlite-database"
+pubDate: 2012-06-28T08:59:48.000Z
+lastModified: 2019-10-23T04:20:39.000Z
+categories:
+  - "xaml"
+  - "metro"
+  - "winrt"
+  - "sqlite"
+  - "sqlite-net"
+draft: false
+---
+
+<p>It looks like people are really glad about being able to use SQLite within their Metro style apps.  I had written two previous posts (<a href="http://timheuer.com/blog/archive/2012/05/20/using-sqlite-in-metro-style-app.aspx">Using SQLite in your Metro style app</a> and <a href="http://timheuer.com/blog/archive/2012/06/05/howto-video-using-sqlite-in-metro-style-app.aspx">HOWTO: Build and include SQLite</a>) about this topic.  I’m pleased to report that since those posts the SQLite team released a build (3.7.13 as of the datestamp on this post) which also provides the binary (32- and 64-bit versions) pre-compiled for you for inclusion in your Metro style app.  You can get them from the SQLite download page.</p>  <p>I’ve received a few comments/questions that I thought I might clarify in my own opinion (and some facts) about using SQLite in your app.</p>  <h2>Creating new databases</h2>  <p>The first thing to understand is that your app lives in a secure sandbox during operation.  This is also referred to as the AppContainer in the Metro style app world.  What this means is that you can only do certain operations in certain places or through brokers provided by the various WinRT APIs.  The first stumbling block I’ve seen people try to do is create a database in places where they cannot create databases.  When using SQLite, regardless of whatever client method you use to program with it, you need to pass in a full path to where the database should be created (or an existing one that you are opening).  Simply passing “foo.db” in the open method is not enough as that will assume an incorrect path to create the database file.  Another incorrect thing that folks are doing is using the <em>Windows.ApplicationModel.Package.Current.InstalledLocation.Path</em> API.  This represents the location of where your app is <strong>installed</strong> which is not an area you can directly write files/content.</p>  <blockquote>   <p><strong>NOTE</strong>: SQLite uses the CreateFile2 API which is not a WinRT broker API.  This means that it is restricted to certain areas of the AppContainer.</p> </blockquote>  <p>The other area where people are trying to create files is in the document library location for the user.  If you have declared the Document Library capability as well as provided a file association for the file you want to create, then you can read/write files in the Document Library <strong>using the WinRT broker APIs.</strong>  This, however, is not possible using the CreateFile2 Win32 APIs.  </p>  <p>This leaves the app’s ApplicationData location.  So the correct path to create your database from your app is <em>Windows.Storage.ApplicationData.Current.LocalFolder.Path</em> as a starting point.  Here’s an example (using the sqlite-net library and C#):</p>  <div id="codeSnippetWrapper" style="overflow: auto; cursor: text; font-size: 8pt; border-top: silver 1px solid; font-family: 'Courier New', courier, monospace; border-right: silver 1px solid; border-bottom: silver 1px solid; padding-bottom: 4px; direction: ltr; text-align: left; padding-top: 4px; padding-left: 4px; margin: 20px 0px 10px; border-left: silver 1px solid; line-height: 12pt; padding-right: 4px; width: 97.5%; background-color: #f4f4f4">   <div id="codeSnippet" style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4">     <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum1" style="color: #606060">   1:</span> <span style="color: #0000ff">using</span> (var db = <span style="color: #0000ff">new</span> SQLiteConnection(Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, <span style="color: #006080">"foo.db"</span>)))</pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum2" style="color: #606060">   2:</span> {</pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum3" style="color: #606060">   3:</span>     <span style="color: #008000">// do stuff here</span></pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum4" style="color: #606060">   4:</span> }</pre>
+<!--CRLF--></div>
+</div>
+
+<p>Now whenever I need to query this database I would use that same path from my app.</p>
+
+<h2>Seeding your app with starting data</h2>
+
+<p>Some folks want to start their application with some seed data.  There are a few ways that you could do this.  One way would be to create a database during startup and execute SQL statements against the newly-created database.  You would basically be shipping a script in your app that you’d run on the first run of the app after install.  If you went this route, then you’d use the method above to create the database and then execute your INSERT statements.</p>
+
+<p>Another method is to use an existing database file that perhaps you’ve already created.  The misconception here that people have is that since they include a seed database in their app that they can just open that database file and read/write on it.  The read part is correct, however you will fail to write to that file as it is in the package install location and not the ApplicationData location.  The first step you want to do in this approach is move your seed database to the place where you can write to it.  You can use the Windows.Storage APIs to accomplish this.  Here’s an example of how you might do this.  This assumes that your app has a file named “Northwind.sqlite” in your package:</p>
+
+<div id="codeSnippetWrapper" style="overflow: auto; cursor: text; font-size: 8pt; border-top: silver 1px solid; font-family: 'Courier New', courier, monospace; border-right: silver 1px solid; border-bottom: silver 1px solid; padding-bottom: 4px; direction: ltr; text-align: left; padding-top: 4px; padding-left: 4px; margin: 20px 0px 10px; border-left: silver 1px solid; line-height: 12pt; padding-right: 4px; width: 97.5%; background-color: #f4f4f4">
+  <div id="codeSnippet" style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4">
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum1" style="color: #606060">   1:</span> <span style="color: #008000">// grab the file from the package installed location into a StorageFile</span></pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum2" style="color: #606060">   2:</span> StorageFile seedFile = await StorageFile.GetFileFromPathAsync(</pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum3" style="color: #606060">   3:</span>     Path.Combine(Windows.ApplicationModel.Package.Current.InstalledLocation.Path,</pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum4" style="color: #606060">   4:</span>     <span style="color: #006080">"Northwind.sqlite"</span>));</pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum5" style="color: #606060">   5:</span>  </pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum6" style="color: #606060">   6:</span> <span style="color: #008000">// copy the StorageFile to the ApplicationData folder</span></pre>
+<!--CRLF-->
+
+    <pre style="border-top-style: none; overflow: visible; font-size: 8pt; border-left-style: none; font-family: 'Courier New', courier, monospace; border-bottom-style: none; color: black; padding-bottom: 0px; direction: ltr; text-align: left; padding-top: 0px; border-right-style: none; padding-left: 0px; margin: 0em; line-height: 12pt; padding-right: 0px; width: 100%; background-color: #f4f4f4"><span id="lnum7" style="color: #606060">   7:</span> await seedFile.CopyAsync(Windows.Storage.ApplicationData.Current.LocalFolder);</pre>
+<!--CRLF--></div>
+</div>
+
+<p>Now the code above does the copy.  Of course you would want to add some logic to verify that you aren’t overwriting an existing database.  Just like anything else there are various ways to do this so I am not prescribing any one way.  Once you get the data where you need it to be, then you can work with the database how you’d like.</p>
+
+<p>I hope this helps understand the method of creating (in the right place) and seeding your app with a SQLite database.  Hope this helps!</p>
+
+<div id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:c9ed0920-011d-4495-b984-25f98acb7cf2" class="wlWriterEditableSmartContent" style="float: none; padding-bottom: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px"></div>

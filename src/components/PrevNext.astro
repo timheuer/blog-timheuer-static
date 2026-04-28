@@ -1,0 +1,18 @@
+---
+interface PostLink {
+  title: string;
+  slug: string;
+}
+
+interface Props {
+  next?: PostLink;
+  previous?: PostLink;
+}
+
+const { next, previous } = Astro.props;
+---
+
+<ul>
+  {next && <li>Next: <a href={`/blog/${next.slug}/`}>{next.title}</a></li>}
+  {previous && <li>Previous: <a href={`/blog/${previous.slug}/`}>{previous.title}</a></li>}
+</ul>

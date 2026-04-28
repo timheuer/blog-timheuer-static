@@ -1,0 +1,32 @@
+---
+/**
+ * Legacy redirect: /post/{slug} -> /blog/{slug}/
+ */
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+  return allPosts.map(post => ({
+    params: { slug: post.data.slug },
+    props: { target: `/blog/${post.data.slug}/` },
+  }));
+}
+
+const { target } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="refresh" content={`0;url=${target}`} />
+  <link rel="canonical" href={target} />
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting to <a href={target}>{target}</a>...</p>
+  <script is:inline define:vars={{ target }}>
+    window.location.replace(target);
+  </script>
+</body>
+</html>

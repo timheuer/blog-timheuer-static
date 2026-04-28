@@ -1,0 +1,15 @@
+---
+title: "Temporary fix for Foxit Previewer for Outlook 2010 64-bit"
+slug: "temporary-fix-for-foxit-pdf-previewer-and-outlook-64-bit"
+pubDate: 2010-01-27T17:17:12.000Z
+lastModified: 2019-10-23T04:20:33.000Z
+categories:
+  - "pdf"
+  - "outlook"
+  - "foxit"
+  - "previewer"
+  - "64-bit"
+draft: false
+---
+
+<p>As noted in a <a href="http://timheuer.com/blog/archive/2009/09/03/foxit-pdf-previewer-update-office-2010.aspx">previous update post</a> on my <strong><a href="http://timheuer.com/foxit">Foxit PDF Previewer</a></strong> for Outlook and Vista/Windows 7, there is an issue in the Office 2010 64-bit Beta (specifically Outlook) for executing 32-bit preview handlers on 64-bit Outlook.  I’ve got an update for those temporarily.</p>  <p>First, I can confirm that the issue is fixed in the later builds of Outlook 2010, so this fix is indeed only temporary.</p>  <p>Thanks to some assistance that <a href="http://www.pretentiousname.com">Leo Davidson</a> provided, I was able to provide a work around for my previewer that I’ve been able to confirm “works for me” on my installation of Outlook 64-bit on Windows 7 64-bit edition.</p>  <p><strong>WARNING: </strong>This temporary fix involves messing with your registry.  You should do this with caution.  While I’ve done it successfully and tested fine, don’t hold me responsible if you computer catches on fire or neighbor pet animals die by doing this.  You should backup your registry before applying this to be safe.  Again, that said, it’s minor, only updates my application area settings and shouldn’t interfere with your settings.</p>  <p>The fix involves massaging some registry settings.  I’ve provided the registry settings in a file you can download here: <a href="http://storage.timheuer.com/FoxitPreviewerTempFix.zip">FoxitPreviewerTempFix.zip</a>.  There are <strong>two (2)</strong> registry files here.  Even though they are labeled 32-bit and 64-bit, they <strong>both</strong> need to be merged for this fix to work.  You should be able to double-click the .reg file and it will merge it auotomatically.  Additionally you can start regedit.exe and use the Import option (this is what I do).</p>  <p>Once complete, and assuming you have my previewer installed, then PDF preview attachment with my handler for Outlook 64-bit should be fixed for you.  Again, the requirement first here is that you have my <strong><a href="http://timheuer.com/foxit">Foxit PDF Previewer</a></strong> installed FIRST.</p>  <p>Please leave comments if this solved your issue.  This is ONLY for Outlook 2010 64-bit.  This is not necessary if you are running Outlook 2010 (32-bit), even if you are on Windows 64-bit.  That’s a lot of ‘bit’ talk I know.</p>  <p>Hope this helps! (and thanks Leo!)</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:f09acfcb-147d-4962-9773-98dcd2db88c2" class="wlWriterEditableSmartContent"></div>

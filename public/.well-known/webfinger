@@ -1,0 +1,19 @@
+{
+    "subject": "acct:timheuer@mastodon.social",
+    "aliases": [
+        "https://mastodon.social/@timheuer",
+        "https://mastodon.social/users/timheuer"
+    ],
+    "links": [
+        {
+            "rel": "http://webfinger.net/rel/profile-page",
+            "type": "text/html",
+            "href": "https://mastodon.social/@timheuer"
+        },
+        {
+            "rel": "self",
+            "type": "application/activity+json",
+            "href": "https://mastodon.social/users/timheuer"
+        }
+    ]
+}

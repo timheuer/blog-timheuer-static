@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
+  const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+
+  // Build category -> posts map
+  const categoryPosts = new Map<string, typeof allPosts>();
+  for (const post of allPosts) {
+    for (const cat of post.data.categories) {
+      const key = cat.toLowerCase();
+      if (!categoryPosts.has(key)) {
+        categoryPosts.set(key, []);
+      }
+      categoryPosts.get(key)!.push(post);
+    }
+  }
+
+  // Generate paginated paths for each category
+  const pages = [];
+  for (const [category, posts] of categoryPosts) {
+    const sorted = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+    const paginated = paginate(sorted, {
+      params: { category },
+      pageSize: 20,
+    });
+    pages.push(...paginated);
+  }
+
+  return pages;
+}
+
+const { page } = Astro.props;
+const { category } = Astro.params;
+const siteUrl = 'https://timheuer.com';
+---
+
+<BaseLayout title={`Posts in category: ${category} - Tim Heuer`} description={`Posts tagged with ${category}`}>
+  <article class="post container" itemscope itemtype="http://schema.org/BlogPosting" style="margin-top:50px" itemprop="blogPost">
+    <header>
+      <h1 itemprop="name headline">{page.total} posts found for category: <b>{category}</b></h1>
+    </header>
+
+    <div itemprop="articleBody mainEntityOfPage">
+      <ul>
+        {page.data.map((post: any) => (
+          <li>
+            ({post.data.pubDate.toLocaleDateString('en-US', { day: '2-digit', month: 'short', year: 'numeric' })}) - <b><a href={`/blog/${post.data.slug}/`}>{post.data.title}</a></b>
+            {post.data.description && (
+              <>
+                <br />
+                {post.data.description}
+              </>
+            )}
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    {(page.url.prev || page.url.next) && (
+      <nav class="pagination" aria-label="Pagination">
+        <div class="d-flex">
+          {page.url.prev && <a href={page.url.prev}>← Newer</a>}
+          {page.url.next && <a href={page.url.next} class="ml-auto">Older →</a>}
+        </div>
+      </nav>
+    )}
+  </article>
+</BaseLayout>

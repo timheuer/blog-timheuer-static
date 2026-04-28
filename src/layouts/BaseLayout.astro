@@ -1,0 +1,149 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+const { title, description = '', ogImage, canonicalUrl } = Astro.props;
+const siteUrl = 'https://timheuer.com';
+const currentUrl = siteUrl + Astro.url.pathname;
+const defaultOgImage = `${siteUrl}/blog/img/twitter-summary-large.png`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YQKFCLJ6SX"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-YQKFCLJ6SX');
+  </script>
+  <meta charset="utf-8" />
+  <title>{title}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1" />
+  <meta name="description" content={description} />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/v4-font-face.min.css" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={currentUrl} />
+  <meta property="og:image" content={ogImage || defaultOgImage} />
+  <meta property="twitter:site" content="@timheuer" />
+  <meta property="twitter:creator" content="@timheuer" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta content="Visual Studio, .NET, ASP.NET, Blazor, Razor, dotnet, netcore, Azure, Cloud, Heuer" name="keywords" />
+  <meta content="YlcccHzMS2d742qMpXWgpgCnBqTa-Rc6b1Ee9L0jFRw" name="google-site-verification" />
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/img/icon16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/img/icon180x180.png" />
+  <link rel="shortcut icon" href="/blog/img/icon16x16.png" />
+  <link rel="me" href="https://mastodon.social/@timheuer" />
+
+  {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+  <link rel="alternate" type="application/rss+xml" href="/blog/feed/rss/" />
+  <link rel="alternate" type="application/atom+xml" href="/blog/feed/atom/" />
+
+  <slot name="head" />
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <header class="siteheader sticky-top">
+    <div class="d-flex">
+      <a href="/blog/">Tim Heuer</a>
+      <nav class="navbar navbar-expand-sm navbar-dark ml-auto">
+        <button class="navbar-toggler" type="button" data-target="#navbarSupportedContent" data-toggle="collapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a href="/blog/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Browse By</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" style="color:#000;font-size:1rem" href="/blog/categories">Categories</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="/blog/contact" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a target="_blank" rel="noopener" href="https://twitter.com/timheuer" class="nav-link" title="Follow me on Twitter" aria-label="Follow me on Twitter"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li class="nav-item">
+              <a target="_blank" rel="noopener" href="https://instagram.com/timheuer" class="nav-link" title="Follow me on Instagram" aria-label="Follow me on Instagram"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main itemprop="mainEntity" itemscope itemtype="http://schema.org/Blog">
+    <noscript>
+      <p class="container">Some features of this website do not work as expected when JavaScript is disabled</p>
+    </noscript>
+    <slot />
+  </main>
+
+  <footer class="sitefooter">
+    <div class="container">
+      <div class="d-flex">
+        <p class="blog-copyright">The content on this site is my own opinion, nobody else. Period.</p>
+        <div class="widget-social ml-auto">
+          <ul>
+            <li>
+              <a class="widget-social-tw" target="_blank" rel="noopener" href="https://twitter.com/timheuer" aria-label="Follow me on Twitter" title="Follow me on Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a class="widget-social-bluesky" target="_blank" rel="me" href="https://bsky.app/profile/timheuer.com" aria-label="Follow me on Bluesky" title="Follow me on Bluesky">
+                <i class="fab fa-bluesky"></i>
+              </a>
+            </li>
+            <li>
+              <a class="widget-social-in" target="_blank" rel="noopener" href="https://instagram.com/timheuer" aria-label="Follow me on Instagram" title="Follow me on Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a class="widget-social-linkedin" target="_blank" rel="noopener" href="https://linkedin.com/in/timheuer" aria-label="View my profile on LinkedIn" title="View my profile on LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li>
+              <a class="widget-social-strava" target="_blank" rel="noopener" href="https://strava.com/athletes/timheuer" aria-label="Follow me on Strava" title="Follow me on Strava">
+                <i class="fab fa-strava"></i>
+              </a>
+            </li>
+            <li>
+              <a class="widget-social-rss" target="_blank" rel="noopener" href="/blog/feed/rss" aria-label="Subscribe to my RSS Feed" title="Subscribe to my RSS Feed">
+                <i class="fa fa-rss"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <slot name="scripts" />
+</body>
+</html>
+
+<style lang="scss" is:global>
+  @import '../styles/abovethefold.scss';
+  @import '../styles/belowthefold.scss';
+</style>

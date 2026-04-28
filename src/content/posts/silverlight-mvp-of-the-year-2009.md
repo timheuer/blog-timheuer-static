@@ -1,0 +1,16 @@
+---
+title: "Silverlight MVPs of the Year (2009)"
+slug: "silverlight-mvp-of-the-year-2009"
+pubDate: 2010-02-18T12:35:04.000Z
+lastModified: 2019-10-23T04:20:34.000Z
+categories:
+  - "silverlight"
+  - "wpf"
+  - "xaml"
+  - "ria"
+  - "mvp"
+  - "riaservices"
+draft: false
+---
+
+<p>This week at Microsoft we are hosting roughly 1,300 of our top community experts around the world in various technical competencies.  For <a href="http://silverlight.net">Silverlight</a>, we have about 80% of our group in attendance from all over the world.</p>  <p><img style="margin: 0px auto; display: block; float: none" title="" alt="Microsoft Most Valuable Professional logo" src="http://storage.timheuer.com/mvp-h-small.png" /></p>  <p>At the beginning of the year the Silverlight team asked our MVP group to identify the individuals within their group have done a lot for Silverlight community and that they would consider worthy of being named an ‘MVP of the year’ award.</p>  <p>First to be clear, ALL of our MVPs are top notch and all have contributed significantly to the Silverlight community both professionally and personally.  It is really exciting to see this level of commitment to community these folks have.  You should take a moment and check out these folks using the <a href="http://twitter.com/John_Papa/silverlightmvp">Twitter list</a> that <a href="http://johnpapa.net">John Papa</a> has put together.</p>  <p>Out of this group of experts, they have peer selected the following individuals for 2009 as their ‘Silverlight MVPs of the Year’ – please join me in congratulating:</p>  <ul>   <li><strong>Laurent Bugnion</strong> (<a href="http://blog.galasoft.ch/">blog</a>, <a href="http://twitter.com/LBugnion">Twitter</a>)</li>    <li><strong>Dave Campbell</strong> (<a href="http://geekswithblogs.net/WynApseTechnicalMusings/Default.aspx">blog</a>, <a href="http://twitter.com/wynapse">Twitter</a>)</li> </ul>  <p>These two were identified <strong>by their peers</strong> and the Silverlight team as contributing significantly to the Silverlight community/ecosystem over this past year.  Laurent has one of the most definitive books on Silverlight (and is working on an updated edition) as well as releasing one of his projects, MVVM Light – a Model-View-ViewModel framework for Silverlight developers to help them get quickly started with MVVM pattern development.  Dave has saved us all the searching in the world and continues to scour, validate and surface some of the best Silverlight content around the world in his <a href="http://geekswithblogs.net/WynApseTechnicalMusings/Default.aspx">Silverlight Cream</a> blog – providing a daily post of aggregation of all the cool things happening in the Silverlight community.</p>  <p>Take a moment to subscribe/read/whatever to our Silveright MVPs – they are the folks keeping us honest :-)</p>  <p>Congratulations Laurent, Dave and all the MVPs for the efforts you have accomplished over this past year – looking forward to continued efforts this year!</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:a2ab7812-0339-4892-a158-1d2e6f11638c" class="wlWriterEditableSmartContent"></div>  <br />

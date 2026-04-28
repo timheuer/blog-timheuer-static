@@ -1,0 +1,17 @@
+---
+title: "Windows Store details announced and a contest"
+slug: "windows-store-details-and-contest"
+pubDate: 2011-12-06T21:34:40.000Z
+lastModified: 2019-10-23T04:20:38.000Z
+categories:
+  - "xaml"
+  - "windows"
+  - "metro"
+  - "win8"
+  - "windows 8"
+  - "windows store"
+  - "first apps"
+draft: false
+---
+
+<p><img style="display: inline; float: left" align="left" src="http://storage2.timheuer.com/winstore.png" width="195" height="194" />Today there was an event in San Francisco which introduced the Windows Store for Windows apps as well as some details on revenue sharing and policies.  As a part of that <strong>Antoine LeBland</strong>, Vice President for Windows Web Services, also opened up a new dialog about the store specifically in a new blog <strong><a href="http://blogs.msdn.com/b/windowsstore/archive/2011/12/06/announcing-the-new-windows-store.aspx?utm_source=timheuer">Windows Store for developers</a></strong>.  This blog will help developers learn about aspects of the store as well as serve as a place for dialog between the store teams and you, the app developer.  I think it is great that the store team is following in the footsteps of the <a href="http://blogs.msdn.com/b/b8">Building Windows 8 blog</a> and reaching out to share some of the high-level and, hopefully, behind-the-scenes aspect that makes up the store.  I look forward to future posts on the blog.</p>  <p>The inaugural post reviews the events that transpired today sharing some information for those who were not there, as well a a video clip of some of the highlights from Antoine and Ted:</p>  <p align="center"><iframe style="width: 512px; height: 288px" src="http://channel9.msdn.com/posts/Previewing-The-Windows-Store/player?w=512&amp;h=288&amp;html5=true " frameborder="0" scrolling="no"></iframe></p>  <p>The key store highlights discussed in the post are:</p>  <ul>   <li>Designed for discovery – store will be searchable and permalink-able (is that a word?) </li>    <li>Flexible business models – including in-app trial upgrades, etc. as well as flexible payment options </li>    <li>Transparent terms – clear understanding of the terms as a developer/business </li>    <li>Best economics – you’ll have to read the post about the revenue split and advantages after certain milestones </li> </ul>  <p>In addition to this news, Microsoft announced a <strong><a href="https://buildwindowscontest.com/?utm_source=timheuer">First Apps Contest</a></strong>.  The basics of this contest are that you have the opportunity to show your awesomeness to the world first.  The contest will select <strong>eight (8)</strong> winning apps to be the very first app in the Windows Store when it opens.  You’ll also get some goodies as a winner such as a <strong>Samsung Windows Developer PC</strong> and 2-years worth of subscription to the store as a developer.</p>  <p>The contest starts now, so be sure to read the rules and register and learn about what is required of you.  This is a great opportunity to be a first-mover in the Windows Store which will have some incredible reach opportunities for you as a developer.</p>  <p>I can’t wait to see the types and compelling experiences that developers will create with our platform…get started! </p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:bb20fb88-8780-42c9-898d-7923785e1b5b" class="wlWriterEditableSmartContent"></div>

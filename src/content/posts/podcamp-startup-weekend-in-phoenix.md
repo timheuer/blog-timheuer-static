@@ -1,0 +1,18 @@
+---
+title: "Podcamp, iJustine and Startup Weekend"
+slug: "podcamp-startup-weekend-in-phoenix"
+pubDate: 2008-09-24T11:45:05.000Z
+lastModified: 2019-10-23T04:20:23.000Z
+categories:
+  - "podcast"
+  - "podcampaz"
+  - "podcamp"
+  - "ijustine"
+  - "startupweekend"
+  - "startup weekend"
+  - "uat"
+  - "social media"
+draft: false
+---
+
+<p>Two great events are happening here in the Valley of the Sun (yes, it’s still 105°F outside here folks) are coming up soon that you should consider taking part in.</p>  <p><strong><u>Startup Weekend Phoenix</u></strong></p>  <p><a href="http://phoenixstartupweekend.eventbrite.com/?discount=timheuer"><img style="margin: 0px 10px 0px 0px; display: inline" border="0" align="left" src="http://s3.amazonaws.com:80/timheuer-img/swphx.png" /></a>Startup Weekend is a weekend long event (starting on Friday at about 6pm and ending on Sunday at 6pm) where local techies, entrepreneurs, project managers, or interested people of all types gather in teams to actually <strong>create companies</strong> that could be viable in today’s marketplace.  This isn’t just vapor, past Startup Weekends have actually gotten to the point of initial prototypes, branding, marketing strategies within this weekend.  The goal is to gather the local community brains, have fun, and innovate.  It sounds like a really, really great time.</p>  <p />  <p>The event is not a free event, but only costs $39.99 and the funds are going only to directly support the event…the intention is not to ‘make money’ off these registration fees, but cover the costs beyond the sponsors have provided.  This event is not organized by one individual, one organization and there are no hidden agendas by any sponsors.  Local entrepreneurs and community folks are arranging this and excited to try to ignite the innovation in the Phoenix area and come up with something great!</p>  <p><a href="http://phoenixstartupweekend.eventbrite.com/?discount=timheuer">Register here</a>.  <a href="http://phoenix.startupweekend.com">Info here</a>.  October 17-19, 2008.</p>  <p><strong><u>PodcampAZ 2008</u></strong></p>  <p><a href="http://podcampaz.org"><img style="margin: 0px 0px 0px 5px; display: inline" border="0" align="right" src="http://s3.amazonaws.com:80/timheuer-img/podcampaz_avatar.jpg" /></a>I went to this event last year and it was full of energy!  Organized by some great folks, namely <a href="http://iboughtamac.com">Brent Spore</a>, this is the place to be in November if you are involved locally in social media.  The speaker line up is looking fun and Chris Pirillo and <a href="http://www.ijustine.com">iJustine</a> will be in attendance. This event is free and if you are available that weekend you should definitely go to see what is happening in social media in our area.</p>  <p>The event is two days, held at the UAT campus in Tempe/Phoenix (I can never tell exactly where that is located, but it’s close enough to Ted’s BBQ that I call it Tempe).  Come out and join the fun.</p>  <p><a href="http://podcampaz.org">Info here</a>.  No registration required.  Only fun is required.  Last year shirts were available with a “This one time, at Podcamp” theme – I can only imagine something equally as sarcastic will be made this year.</p>  <p>It’s fun to see things like this happening in Phoenix.  Let’s get everyone to show up and support our technical communities! </p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:af57865c-9966-468f-b6fd-d8c754cfdee3" class="wlWriterEditableSmartContent"></div>

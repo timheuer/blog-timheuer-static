@@ -1,0 +1,22 @@
+---
+title: "Get a Silverlight XAP signing certificate for cheap thanks to GoDaddy"
+slug: "godaddy-code-sign-certificate-for-silverlight-xap-promo-code"
+pubDate: 2010-04-21T15:59:32.000Z
+lastModified: 2019-10-23T04:20:35.000Z
+categories:
+  - "silverlight"
+  - "wpf"
+  - "expression"
+  - "expression blend"
+  - "xaml"
+  - "ria"
+  - "xap"
+  - "godaddy"
+  - "riaservices"
+  - "xapsign"
+  - "clickonce"
+  - "authenticode"
+draft: false
+---
+
+<p>One of the new features in <a href="http://www.silverlight.net">Silverlight</a> 4 is the ability to sign your XAP applications so that your out-of-browser trusted applications look more friendly (trusted) to your users, they come from a verified publisher, and they can take advantage of the auto-update APIs in Silverlight.</p>  <p>If you don’t know what I’m talking about, here’s some resources for some background:</p>  <ul>   <li><a href="http://timheuer.com/blog/archive/2010/03/15/whats-new-in-silverlight-4-rc-mix10.aspx#xap-signing">XAP Signing in Silverlight 4</a> </li>    <li>HOWTO Video: <a href="http://silverlight.net/learn/videos/all/xap-signing">Sign Silverlight 4 Applications</a> </li> </ul>  <p>Basically if you are writing a Silverlight 4 trusted application, you <strong>WANT</strong> to be signing your XAPs.  The XAP sign process uses the normal Authenticode process for code signing.  </p>  <p><img style="margin: 0px 20px; display: inline" align="left" src="http://storage.timheuer.com/log_gd_3.gif" />Thanks to our friends at GoDaddy, they want you to sign your apps as well and have them delivered from a verified publisher!  <strong>They are providing Silverlight developers a 50% discount on their code signing certificates for XAP signing!</strong>  If you don’t have a code signing certificate, now is the time!</p>  <p>To participate in this offer, be prepared to have all your information ready.  Certificates are issued to individuals/organizations.  It is much more of a verification process than something like an SSL web certificate.  In fact, the process actually involves human interaction!  You will be required to verify your information on your submission and perhaps be required to provide documentation of verification (if you are an organization readily found on the web, this usually isn’t a problem).  Follow the steps carefully and specifically.  I also recommend using Internet Explorer to go through the process to be safe.  Additionally, you will only be able to pick up your certificate from the machine you requested it on…so don’t pave that machine until you get it :-).</p>  <p>To take advantage of this offer, visit the <a href="http://www.godaddy.com/gdshop/ssl/signing.asp?ci=13314">GoDaddy code signing area</a> and start the process.  You can choose a 1- or 2-year code signing certificate to apply this discount (might as well go for the 2 years so you maximize the discount).  Add the code signing certificate to your shopping cart then add this discount code in the promocode area: <strong><font color="#ff0000">MSSILVER</font></strong>.  This will apply the 50% (of regular rates) to the 1- or 2-year code signing certs in your basket.  </p>  <p><img style="margin: 0px auto; display: block; float: none" src="http://storage.timheuer.com/gdcodesign1.png" /></p>  <p>Then complete your purchase.  Once complete you’ll receive email instructions on how to redeem the credit you purchased and start the verification process.  Be patient…this is not a 5-minute process.  In fact, in some cases it might take a few days to complete the verification process.</p>  <p>This offer is <strong>only good from 20-April-2010 until 20-May-2010 and only on 1- or 2-year code signing certificates</strong>, so act quick.  This is a great chance to get a well-known certificate authority code signing certificate.  During the order process you will be given the option to choose a Certificate Authority between GoDaddy and Star(something)…I recommend sticking with the GoDaddy CA on this one.</p>  <p>I hope you are able to take advantage of this offer.  This is a certificate that you can use to sign multiple applications…not just one, so it is definitely a worthwhile investment.  Make sure you timestamp your codesigns!!!</p>  <p>Hope this helps! </p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:1f095459-2ca2-4c3c-b628-5c2b626d857d" class="wlWriterEditableSmartContent"></div>

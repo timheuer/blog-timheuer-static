@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  excludeId?: string;
+  count?: number;
+}
+
+const { excludeId, count = 10 } = Astro.props;
+const allPosts = await getCollection('posts', ({ data }) => !data.draft);
+const sorted = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .filter(p => p.data.slug !== excludeId)
+  .slice(0, count);
+---
+
+<ul>
+  {sorted.map(post => (
+    <li><a href={`/blog/${post.data.slug}/`}>{post.data.title}</a></li>
+  ))}
+</ul>

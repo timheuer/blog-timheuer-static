@@ -1,0 +1,15 @@
+---
+title: "Great customer service follow-up: LG Electronics"
+slug: "lg-electronics-warranty-follow-up"
+pubDate: 2009-09-02T23:05:14.000Z
+lastModified: 2019-10-23T04:20:31.000Z
+categories:
+  - "customer service"
+  - "gitomer"
+  - "lg"
+  - "lg electronics"
+  - "lge"
+draft: false
+---
+
+<p>About 2 months ago I <a href="http://timheuer.com/blog/archive/2009/07/06/lg-electronics-customer-service-loyalty-gitomer.aspx">wrote about an experience</a> with an electronics company (LG Electronics USA) and some amazing customer service they were providing.  The bottom line recap was this:</p>  <ul>   <li>I bought a TV about 5 years ago</li>    <li>TV started getting wonky about 8 months ago</li>    <li>TV was self-declared dead 2 months ago</li>    <li>TV was out of warranty by YEARS</li>    <li>I called on a whim to LG support</li>    <li>They extended the warranty to cover the full cost of repairs</li> </ul>  <p>All this process so far, no questions asked.  No feeling of guilt.  No making it seem like they were bending over backwards or that they were really doing me a favor.</p>  <p>To catch up, the repairs have failed.  Personally I think it is a combination of the TV going bad and the authorized repair facility (who had admittedly never worked on an LG unit – so how are you authorized then?) not really putting things in right.  After 3 attempts and 2 new parts (optics unit and some drive board) which appeared to have totaled about USD $1,000 retail (what I would have had to pay), it still wasn’t working.  The repair guy was frustrated and left my house with saying <em>I just put in the parts…you’ll have to call LG.</em>  He was not friendly.</p>  <p>We called LG again thinking they would say that they’ve given their best effort and apologize and we’d be on our way.  Not so.  Again, rather than making us feel bad at all the next conversation shocked me…it was along the lines of this: <em>We’re so sorry Mr. Heuer you’ve had this problems.  We don’t want to inconvenience you anymore.  We’d like to replace your TV with a new one.</em>  </p>  <p>In case you didn’t hear it, that was the sound of me picking my jaw up off the floor.</p>  <p>Wow.  Their service just keeps getting better.  We had to do some verification by sending in the label from our old unit (via FedEx that they paid for).  I got a call the next business day after delivery was confirmed.  The call was simple: here are the three models you can pick from.  Wow…choice even!  Since they didn’t have my model anymore I could choose a 50” plasma, 47” plasma or a 42” LCD (our original was 44”).  Holy cow…I had to pinch myself.  I chose the 42 (retail value $1500) because of where it was going and didn’t need anything more.</p>  <p>This whole process has really just been simply amazing to me.  I cannot believe how this company is really taking customer service seriously.  Bravo LG, bravo.</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:cfef50c6-d778-438a-9005-b34dbc65dc61" class="wlWriterEditableSmartContent"></div>

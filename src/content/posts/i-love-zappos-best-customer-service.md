@@ -1,0 +1,12 @@
+---
+title: "I &lt;3 Zappos!"
+slug: "i-love-zappos-best-customer-service"
+pubDate: 2008-06-29T13:56:27.000Z
+lastModified: 2019-10-23T04:20:20.000Z
+categories:
+  - "zappos"
+  - "customer service"
+draft: false
+---
+
+<p><strong><a href="http://www.zappos.com/">Zappos</a></strong> – a company that seemingly ‘gets it’ with regard to customer service, doing the right thing, and providing the best products at the best prices.  They have not paid/asked me for this comment.  When I find a company willing to provide the best service and put the customer first, I’m so impressed.</p>  <p>I just ordered a new pair of shoes this afternoon (about 11:00 GMT –7).  I just received this email (emphasis mine) in my inbox (13:50 GMT –7):</p>  <blockquote>   <p><em>Although you originally ordered Standard (4 to 5 business days) shipping and handling, we have given your order special priority processing in our warehouse and are upgrading the shipping and delivery time frame for your order.  Your order will ship out Monday, June 30th 2008 and be given a special priority shipping status so that you can receive your order even faster than we originally promised! </em></p>    <p><em><strong>Please note that this is being done at no additional cost to you.  It is simply our way of saying thank you for being our customer.</strong></em></p> </blockquote>  <p>Now <strong><em>that</em></strong> is how to treat your customers.  I wrote a <a href="http://timheuer.com/blog/archive/2008/02/15/one-mans-security-anothers-advertising-platform.aspx">quick post earlier this year</a> about how I felt they were innovating in advertising as well.  Seems to be a very creative company…and they are watching on Twitter as well!  I see that their catalog has expanded well beyond shoes and that is the only thing that worries me.  I hope that their commitment to excellence and return policies will apply when you buy that digital camera from them.  I’m not convinced that their expanding catalog is the best business move, but I’m not behind their doors.</p>  <p>Until then, can’t wait for my shoes (oh and btw, if they are the wrong ones or don’t fit, they pay for return shipping too).  Thanks Zappos!</p>  <div class="wlWriterSmartContent" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:52eea4de-13c0-408a-957f-3d8f86a352bc" style="padding-right: 0px; display: inline; padding-left: 0px; float: none; padding-bottom: 0px; margin: 0px; padding-top: 0px"></div>

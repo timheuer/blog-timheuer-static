@@ -1,0 +1,14 @@
+---
+title: "Software Mockups using Balsamiq"
+slug: "create-software-mockups-wireframes-with-balsamiq"
+pubDate: 2008-10-02T14:11:15.000Z
+lastModified: 2019-10-23T04:20:23.000Z
+categories:
+  - "balsamiq"
+  - "wireframe"
+  - "mockups"
+  - "peldi"
+draft: false
+---
+
+<p>Lately I’ve been putting more design thoughts onto paper.  I used to try to prototype in HTML a lot, but it just got too easy to draw it out.  I liked the feel of being ‘less tech’ when it came to mockups, etc.  I was turned on to this program recently called <strong><a href="http://www.balsamiq.com/products/mockups">Balsamiq Mockups</a></strong>.  It is a software program that basically allows you to quickly mock up web/software designs using wire-frame elements.  </p>  <p><a href="http://www.balsamiq.com/products/mockups/examples#mytunez"><img style="margin: 0px 10px 0px 0px; display: inline" title="Sample Balsamiq Mockup" border="0" alt="Sample Balsamiq Mockup" align="left" src="http://www.balsamiq.com/images/myTunez_tn.gif" /></a> I know there are other methods (please post your favorites in the comments), but there is something about this product that makes me like it a lot.  My only complaint is the use of Comic Sans :-).  The author has done a good job of providing a suite of draggable elements that would make up most any web site/application.  I’ve been using it in design thoughts around my blog site here for <a href="http://www.subtextproject.com/">Subtext</a>, as well as other <a href="http://silverlight.net" rel="tag">Silverlight</a> mockups I’ve been playing around with.  </p>  <p>What is cool is that the author provides several ways of getting individual licenses for Balsamiq.  One of them is if you are a contributor on an open source project or doing work for a non-profit.  The web site specifically states:</p>  <blockquote>   <p><em>“If you are a do-gooder of any sort (non-profit, charity, open-source contributor, you get the idea), </em><a href="mailto:peldi@balsamiq.com"><em>email me</em></a><em> with a short blurb and I'll send you a license, FREE of charge.”</em></p> </blockquote>  <p>Very cool to see that kind of ‘giving back’ to the community.  I wrote to <a href="http://www.balsamiq.com/company">Peldi</a> and requested a license for working on the various open source projects I’m involved with and received a license very quickly (the licensed version allows you to save/export).  </p>  <p>I find it to be a helpful tool in the toolbox for doing very, very quick mockups for thoughts.  It exports to a PNG file so you can share with others as well.  Share your stories of wire-framing and mockups!</p>  <div style="padding-bottom: 0px; margin: 0px; padding-left: 0px; padding-right: 0px; display: inline; float: none; padding-top: 0px" id="scid:0767317B-992E-4b12-91E0-4F059A8CECA8:ee9c854e-295a-45e7-b552-55498b6fc5dd" class="wlWriterEditableSmartContent"></div>
