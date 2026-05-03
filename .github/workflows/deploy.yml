@@ -38,6 +38,7 @@ jobs:
                    mkdir -p _site/blog
                    cp -r dist/* _site/blog/
                    mkdir -p _site/feed _site/blog/feed
+                   # Preserve legacy feed URLs at both the site root and the /blog path.
                    cp dist/feed/rss.xml _site/feed/rss
                    cp dist/feed/rss.xml _site/feed/rss.xml
                    cp dist/feed/rss.xml _site/blog/feed/rss
