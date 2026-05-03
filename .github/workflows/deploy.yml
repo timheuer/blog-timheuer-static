@@ -35,9 +35,17 @@ jobs:
 
             - name: Prepare deploy directory
               run: |
-                  mkdir -p _site/blog
-                  cp -r dist/* _site/blog/
-                  echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/blog/"></head><body><a href="/blog/">Redirecting...</a></body></html>' > _site/index.html
+                   mkdir -p _site/blog
+                   cp -r dist/* _site/blog/
+                   mkdir -p _site/feed _site/blog/feed
+                   # Preserve legacy feed URLs at both the site root and the /blog path.
+                   for target in _site/feed/rss _site/feed/rss.xml _site/blog/feed/rss; do
+                       cp dist/feed/rss.xml "$target"
+                   done
+                   for target in _site/feed/atom _site/feed/atom.xml _site/blog/feed/atom; do
+                       cp dist/feed/atom.xml "$target"
+                   done
+                   echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0;url=/blog/"></head><body><a href="/blog/">Redirecting...</a></body></html>' > _site/index.html
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v5
